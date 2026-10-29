@@ -72,6 +72,12 @@ img{max-width:100%}
   /* small choice buttons (visit frequency, etc.): keep 3 in a row */
   section [style*="minmax(150px"]:has(> :nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:8px !important}
   section [style*="minmax(150px"]:has(> :nth-child(3):last-child) > *{padding:14px 12px !important}
+  /* homepage banner: show the crew logo on the worker's back, sharp, below the quote card */
+  #top:has(> img[src*="install-pool"]){padding-bottom:330px !important}
+  #top:has(> img[src*="install-pool"])::after{content:"";position:absolute;left:0;right:0;bottom:0;height:430px;z-index:0;pointer-events:none;
+    background:url(images/install-pool.jpg) no-repeat;background-size:1440px auto;background-position:calc(50vw - 960px) -506px;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.6) 22%,#000 40%);mask-image:linear-gradient(to bottom,transparent 0,rgba(0,0,0,.6) 22%,#000 40%)}
+  #top:has(> img[src*="install-pool"]) > div[style*="max-width: 1200px"]{z-index:1}
 }
 </style>
 
