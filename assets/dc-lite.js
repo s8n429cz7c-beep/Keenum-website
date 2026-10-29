@@ -35,16 +35,27 @@
     return str.replace(HOLE, function (_, e) { var v = lookup(scope, e); return v == null ? '' : String(v); });
   }
 
+  // Sends the form with a normal page submission to FormSubmit, which then returns visitors to /thanks.
   function sendForm(form) {
-    try {
-      var fd = new FormData(form);
-      fd.append('_subject', 'New website request: ' + document.title);
-      fd.append('_template', 'table');
-      fd.append('page', location.pathname);
-      fetch('https://formsubmit.co/ajax/' + encodeURIComponent(FORM_EMAIL), {
-        method: 'POST', headers: { Accept: 'application/json' }, body: fd
-      }).catch(function () {});
-    } catch (e) { /* never block the thank-you message */ }
+    var out = document.createElement('form');
+    out.method = 'POST';
+    out.action = 'https://formsubmit.co/' + FORM_EMAIL;
+    out.style.display = 'none';
+    function add(name, value) {
+      var i = document.createElement('input');
+      i.type = 'hidden'; i.name = name; i.value = value == null ? '' : String(value);
+      out.appendChild(i);
+    }
+    new FormData(form).forEach(function (v, k) { add(k, v); });
+    add('page', location.pathname);
+    add('_subject', 'New website request from keenumlawncare.com');
+    add('_template', 'table');
+    add('_captcha', 'false');
+    add('_next', location.origin + '/thanks');
+    add('_honey', '');
+    document.body.appendChild(out);
+    out.submit();
+    return true;
   }
 
   function eventName(attr, el) {
@@ -99,7 +110,7 @@
         var evName = eventName(name, tpl);
         handlers[evName] = null;
         el.addEventListener(evName, function (e) {
-          if (evName === 'submit') { e.preventDefault(); sendForm(el); }
+          if (evName === 'submit') { e.preventDefault(); sendForm(el); return; }
           var h = handlers[evName];
           if (typeof h === 'function') h(e);
         });
