@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="t d" font-family="'Public Sans', system-ui, sans-serif">
+  <title id="t">How a dry well works</title>
+  <desc id="d">Cutaway of a yard. A downspout on the house feeds a buried pipe that runs to an underground dry well chamber surrounded by gravel. Water fills the chamber and slowly soaks into the sandy soil. A dashed line shows the summer water table, which is checked before installing.</desc>
+  <defs>
+    <pattern id="soil" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#E6D6B3"/>
+      <circle cx="8" cy="10" r="1.6" fill="#CDB88C"/><circle cx="28" cy="6" r="1.2" fill="#CDB88C"/>
+      <circle cx="20" cy="24" r="1.4" fill="#D2BF96"/><circle cx="34" cy="32" r="1.6" fill="#CDB88C"/>
+    </pattern>
+    <pattern id="gravel" width="26" height="22" patternUnits="userSpaceOnUse">
+      <rect width="26" height="22" fill="#B9B4A8"/>
+      <ellipse cx="6" cy="6" rx="5" ry="4" fill="#D6D2C8" stroke="#8E897E" stroke-width="1"/>
+      <ellipse cx="18" cy="8" rx="6" ry="4.5" fill="#CBC6BB" stroke="#8E897E" stroke-width="1"/>
+      <ellipse cx="11" cy="17" rx="5.5" ry="4" fill="#E0DCD3" stroke="#8E897E" stroke-width="1"/>
+      <ellipse cx="23" cy="19" rx="4" ry="3" fill="#C4BFB3" stroke="#8E897E" stroke-width="1"/>
+    </pattern>
+    <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10z" fill="#2F7FC1"/>
+    </marker>
+    <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6">
+      <circle cx="5" cy="5" r="4" fill="#0E3B2C"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="600" fill="#F7F8F3"/>
+
+  <!-- rain -->
+  <g stroke="#2F7FC1" stroke-width="2.5" stroke-linecap="round" opacity=".55">
+    <path d="M60 20 l-8 22"/><path d="M130 10 l-8 22"/><path d="M200 24 l-8 22"/><path d="M380 40 l-8 22"/>
+    <path d="M480 70 l-8 22"/><path d="M600 40 l-8 22"/><path d="M720 72 l-8 22"/><path d="M840 44 l-8 22"/>
+  </g>
+
+  <!-- house with gutter + downspout -->
+  <path d="M-10 64 L110 14 L240 64 Z" fill="#0E3B2C"/>
+  <rect x="0" y="64" width="220" height="166" fill="#FFFFFF" stroke="#0E3B2C" stroke-width="3"/>
+  <rect x="50" y="110" width="50" height="44" fill="#E8EFE3" stroke="#0E3B2C" stroke-width="2"/>
+  <text x="110" y="208" text-anchor="middle" font-size="15" font-weight="700" fill="#0E3B2C">HOUSE</text>
+  <path d="M200 66 h36 v8 h-36z" fill="#5E6A64"/>
+  <path d="M222 74 v156" stroke="#5E6A64" stroke-width="12"/>
+  <path d="M224 90 v120" stroke="#2F7FC1" stroke-width="3" fill="none" marker-end="url(#arw)"/>
+
+  <!-- soil -->
+  <rect x="0" y="230" width="960" height="370" fill="url(#soil)"/>
+  <path d="M0 230 H960" stroke="#5DBB63" stroke-width="9"/>
+
+  <!-- buried pipe from downspout to dry well -->
+  <path d="M222 230 v40 Q222 290 250 292 L560 316" stroke="#3A7D5A" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M260 298 L520 318" stroke="#2F7FC1" stroke-width="3" fill="none" marker-end="url(#arw)"/>
+
+  <!-- gravel envelope + chamber -->
+  <path d="M540 260 L800 260 L800 470 L540 470 Z" fill="url(#gravel)"/>
+  <path d="M540 260 L540 470 L800 470 L800 260" fill="none" stroke="#0E3B2C" stroke-width="3" stroke-dasharray="10 6"/>
+  <rect x="580" y="286" width="180" height="160" rx="10" fill="#3F4A45" stroke="#0E3B2C" stroke-width="3"/>
+  <g fill="#F7F8F3">
+    <circle cx="600" cy="310" r="3"/><circle cx="600" cy="350" r="3"/><circle cx="600" cy="390" r="3"/><circle cx="600" cy="428" r="3"/>
+    <circle cx="740" cy="310" r="3"/><circle cx="740" cy="350" r="3"/><circle cx="740" cy="390" r="3"/><circle cx="740" cy="428" r="3"/>
+    <circle cx="640" cy="434" r="3"/><circle cx="680" cy="434" r="3"/><circle cx="720" cy="434" r="3"/>
+  </g>
+  <path d="M584 350 H756 V440 Q756 442 754 442 H586 Q584 442 584 440 Z" fill="#2F7FC1" opacity=".55"/>
+  <!-- inspection cap -->
+  <rect x="652" y="226" width="36" height="10" rx="3" fill="#15211B"/>
+  <path d="M670 236 V286" stroke="#5E6A64" stroke-width="10"/>
+
+  <!-- soaking out into soil -->
+  <g stroke="#2F7FC1" stroke-width="3" fill="none" marker-end="url(#arw)">
+    <path d="M808 360 L862 360"/><path d="M808 420 L862 432"/>
+    <path d="M532 420 L478 432"/>
+    <path d="M640 478 L626 528"/><path d="M700 478 L714 528"/>
+  </g>
+
+  <!-- water table -->
+  <path d="M0 548 H960" stroke="#2F7FC1" stroke-width="2.5" stroke-dasharray="12 8"/>
+  <rect x="0" y="550" width="960" height="50" fill="#2F7FC1" opacity=".12"/>
+
+  <!-- labels -->
+  <g font-size="17" fill="#15211B">
+    <g stroke="#0E3B2C" stroke-width="1.5" fill="none" marker-start="url(#dot)">
+      <path d="M232 140 L280 140"/>
+      <path d="M400 306 L400 370"/>
+      <path d="M670 232 L670 170 L700 170"/>
+      <path d="M760 300 L812 300"/>
+    </g>
+    <text x="288" y="134" font-weight="700">Downspout</text>
+    <text x="288" y="154" font-size="15" fill="#4A5A51">Roof water goes underground</text>
+
+    <text x="300" y="392" font-weight="700">Buried pipe</text>
+    <text x="300" y="412" font-size="15" fill="#4A5A51">Sloped toward the well</text>
+
+    <text x="708" y="164" font-weight="700">Inspection cap</text>
+    <text x="708" y="184" font-size="15" fill="#4A5A51">The only part you see</text>
+
+    <text x="818" y="296" font-weight="700">Dry well</text>
+    <text x="818" y="316" font-size="15" fill="#4A5A51">chamber in gravel</text>
+
+    <text x="878" y="404" text-anchor="middle" font-size="15" fill="#4A5A51">Soaks into</text>
+    <text x="878" y="422" text-anchor="middle" font-size="15" fill="#4A5A51">the soil</text>
+
+    <text x="24" y="540" font-weight="700" fill="#1F4F7A">Summer water table</text>
+    <text x="24" y="574" font-size="15" fill="#1F4F7A">In SWFL it can rise high. We check it before recommending a dry well.</text>
+  </g>
+
+  <text x="936" y="590" text-anchor="end" font-size="14" font-weight="700" fill="#1F6B4E" letter-spacing="1.5">KEENUM LAWNCARE · HOW A DRY WELL WORKS</text>
+</svg>
